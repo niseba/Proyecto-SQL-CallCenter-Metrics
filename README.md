@@ -1,6 +1,6 @@
 # 📞 Análisis SQL de Centro de Llamadas
 
-Este proyecto presenta una colección de consultas SQL orientadas al análisis operativo de un centro de llamadas simulado. El objetivo principal es extraer métricas clave, identificar patrones de comportamiento y generar información accionable, alineada con escenarios reales de negocio como los que enfrentan empresas de atención al cliente tipo BPO o contact centers.
+Este proyecto presenta una colección de consultas SQL, usando MySQL, orientadas al análisis operativo de un centro de llamadas simulado. El objetivo principal es extraer métricas clave, identificar patrones de comportamiento y generar información accionable, alineada con escenarios reales de negocio como los que enfrentan empresas de atención al cliente tipo BPO o contact centers.
 
 ---
 
