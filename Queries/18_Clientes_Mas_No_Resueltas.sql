@@ -2,12 +2,12 @@
 -- Objetivo:  
 -- ¿Cuántos clientes han tenido más llamadas no resueltas que resueltas?
 
-SELECT 
-    ag.agent_id, 
-    ag.agent_name, 
-    SUM(CASE WHEN resolved = 1 THEN 1 ELSE 0 END) AS Llamadas_Resueltas, 
-    SUM(CASE WHEN abandoned = 1 THEN 1 ELSE 0 END) AS Llamadas_NO_Resueltas
-FROM calls ca
-JOIN agents ag ON ag.agent_id = ca.agent_id
-GROUP BY ag.agent_id, ag.agent_name
-HAVING SUM(CASE WHEN abandoned = 1 THEN 1 ELSE 0 END) > SUM(CASE WHEN resolved = 1 THEN 1 ELSE 0 END);
+SELECT cu.customer_id, cu.customer_name,
+       SUM(CASE WHEN ca.resolved=TRUE THEN 1 ELSE 0 END) AS Llamadas_Resueltas,
+       SUM(CASE WHEN ca.resolved=FALSE THEN 1 ELSE 0 END) AS Llamadas_No_Resueltas
+           
+FROM customers cu
+JOIN calls ca on ca.customer_id=cu.customer_id
+GROUP BY cu.customer_id, cu.customer_name
+HAVING Llamadas_No_Resueltas > Llamadas_Resueltas;  
+
