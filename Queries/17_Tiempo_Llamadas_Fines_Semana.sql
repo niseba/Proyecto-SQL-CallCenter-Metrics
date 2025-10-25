@@ -8,6 +8,6 @@ SELECT cu.customer_id,
        
 FROM customers cu
 JOIN calls ca on ca.customer_id = cu.customer_id
+WHERE WEEKDAY(ca.call_date) IN ('6','7')
 GROUP BY cu.customer_id, cu.customer_name
 ORDER BY Tiempo_Total DESC;
-
